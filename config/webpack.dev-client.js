@@ -13,6 +13,7 @@ module.exports = {
       "./src/main.js"
     ]
   },
+  mode: "development",
   output: {
     filename: "[name]-bundle.js",
     chunkFilename: "[name].js",
