@@ -5,7 +5,7 @@ import Routes from "../components/Routes"
 
 import { flushChunkNames } from "react-universal-component/server"
 import flushChunks from "webpack-flush-chunks"
-import store from "../store"
+import configureStore from "../store"
 import { Provider } from "react-redux"
 import { actionTest } from "../actions"
 
@@ -18,6 +18,7 @@ export default ({ clientStats }) => (req, res) => {
     chunkNames: names
   })
 
+  const store = configureStore()
   store.dispatch(actionTest("something"))
 
   res.send(`

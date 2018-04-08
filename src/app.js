@@ -3,9 +3,10 @@ import ReactDOM from "react-dom"
 import AppRoot from "./components/AppRoot"
 import { AppContainer } from "react-hot-loader"
 import { Provider } from "react-redux"
-import store from "./store"
+import configureStore from "./store"
 import { actionTest } from "./actions"
 
+const store = configureStore()
 store.dispatch(actionTest("something"))
 
 function render(Component) {
